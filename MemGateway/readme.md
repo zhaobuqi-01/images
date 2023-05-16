@@ -1,0 +1,1 @@
+存放MemGateway相关图片
