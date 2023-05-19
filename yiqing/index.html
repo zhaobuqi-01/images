@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="./css/gonggong.css">
+		<script src="js/js/vue.js"></script>
+		<script src="js/js/vue-resource.min.js"></script>
+
+	</head>
+	<body>
+		<div class="main">
+			<!-- 顶部 -->
+			<div class="header">
+				<div class="header_left">
+					<a class="header_title" href="./ditu2/index.html">疫情大数据实时监控入口</a>
+				</div>
+				<div class="header_cont">
+					<div class="header_title">
+						疫情大数据展示
+					</div>
+					<div class="header-img">
+
+					</div>
+				</div>
+				<div class="header_right">
+					<div class="header_title" id="time1s">
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 横线 -->
+			<div class="henxian"><img src="./images/header.png" alt=""></div>
+
+			<div class="neirong fl1">
+				<!-- 左 -->
+				<div class="cont_left">
+					<div class="cont_left_1">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<div class="" style="text-align: center;font-size: 16px;color: #ffffff;margin-top: 10px;">
+							2023国内新冠疫情本土和境外对比
+						</div>
+						<div id="zhexian" style="width: 100%;height:90%;"></div>
+					</div>
+					<div class="cont_left_3">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<div class="" style="text-align: center;font-size: 16px;color: #ffffff;margin-top: 10px;">
+							国内新冠疫情死亡率情况
+						</div>
+						<div id="siwang" style="width: 100%;height:100%;"></div>
+					</div>
+				</div>
+				<!-- 中 -->
+				<div class="cont_cont">
+					<!--左上边框-->
+					<div class="t_line_box">
+						<i class="t_l_line"></i>
+						<i class="l_t_line"></i>
+					</div>
+					<!--右上边框-->
+					<div class="t_line_box">
+						<i class="t_r_line"></i>
+						<i class="r_t_line"></i>
+					</div>
+					<!--左下边框-->
+					<div class="t_line_box">
+						<i class="l_b_line"></i>
+						<i class="b_l_line"></i>
+					</div>
+					<!--右下边框-->
+					<div class="t_line_box">
+						<i class="r_b_line"></i>
+						<i class="b_r_line"></i>
+					</div>
+					<a href="jingwai.html">
+						<div class="center1" id='adds'>
+							<div class="item" v-for="(item, index) in datazhanban" :key="index">
+								<div class="number">{{item.description}}</div>
+								<div class="text">{{item.title}}</div>
+							</div>
+						</div>
+					</a>
+					<div class="center_2">
+						<div class="center_2_map1"><img src="./images/lbx.png"></div>
+						<div class="center_2_map2"><img src="./images/jt.png"></div>
+						<div class="center_2_map3"><img src="./images/map.png"></div>
+						<div class="center_2conts" id="center2"></div>
+					</div>
+				</div>
+				<!-- 右 -->
+				<div class="cont_right">
+
+					<div class="cont_right_1">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<a href="duibi.html">
+							<div id="huifu" style="width: 100%;height:100%;"></div>
+						</a>
+					</div>
+					<div class="cont_right_2">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<div class="fengxian color1 jz_align padd">
+							风险地区情况
+						</div>
+
+						<!--监控-->
+						<div class="monitor panel">
+							<div class="inner">
+								<div class="tabs">
+									<a href="javascript:;" data-index="0" class="active">低风险地区</a>
+									<a href="javascript:;" data-index="1">高险地区</a>
+
+								</div>
+								<div class="content" style="display: block;">
+									<div class="head">
+										<span class="col">序号</span>
+										<span class="col">风险地区名</span>
+										<span class="col">风险程度</span>
+									</div>
+									<div class="marquee-view">
+										<div class="marquee" id="apps">
+											<div class="row" v-for="(item, index) in datadifeng" :key="index">
+												<span class="col">{{index + 1}}</span>
+												<span class="col">{{item.title}}</span>
+												<span class="col">低风险</span>
+												<span class="icon-dot"></span>
+											</div>
+
+										</div>
+									</div>
+								</div>
+								<div class="content">
+									<div class="head">
+										<span class="col">序号</span>
+										<span class="col">风险地区名</span>
+										<span class="col">风险程度</span>
+									</div>
+									<div class="marquee-view">
+										<div class="marquee" id="apgs">
+											<div class="row" v-for="(item, index) in datagaofeng" :key="index">
+												<span class="col">{{index + 1}}</span>
+												<span class="col">{{item.title}}</span>
+												<span class="col">高风险</span>
+												<span class="icon-dot"></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</body>
+
+	<!-- 时间js -->
+	<script src="js/time.js"></script><!-- 时间js -->
+	<script src="js/js/data.js"></script>
+	<script src="js/js/center1.js"></script><!-- 地图js -->
+	<script src="js/js/echarts.min.js"></script>
+	<script src="js/js/china.js"></script>
+	<script src="js/js/center2.js"></script>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/js/index.js"></script>
+	<script src="js/js/zhexian.js"></script><!-- 柱状图js -->
+	<script src="js/js/siwang.js"></script><!-- 柱状图js -->
+	<script src="js/js/huifu.js"></script><!-- 恢复产业企业 -->
+	<!-- 低风险地区接口 -->
+	<script type="text/javascript">
+		new Vue({
+			el: "#apps",
+			data: {
+				datadifeng: []
+			},
+			mounted() {
+				this.gtata();
+			},
+			methods: {
+				gtata() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?channel=26', {})
+						.then(res => {
+							this.datadifeng = res.data.data.pageList.data
+							console.log(this.datadifeng)
+						})
+				},
+			}
+		})
+	</script>
+	<!-- 高风险地区接口 -->
+	<script type="text/javascript">
+		new Vue({
+			el: "#apgs",
+			data: {
+				datagaofeng: []
+			},
+			mounted() {
+				this.gtatag();
+			},
+			methods: {
+				gtatag() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?channel=25', {})
+						.then(res => {
+							this.datagaofeng = res.data.data.pageList.data
+							console.log(this.datagaofeng)
+						})
+				},
+			}
+		})
+	</script>
+	<!-- 疫情展板接口 -->
+	<script type="text/javascript">
+		new Vue({
+			el: "#adds",
+			data: {
+				datazhanban: []
+			},
+			mounted() {
+				this.zhanban()
+			},
+			methods: {
+				zhanban() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=28&model=-1', {})
+						.then(res => {
+							this.datazhanban = res.data.data.pageList.data
+							console.log(this.datazhanban)
+						})
+				}
+			}
+		})
+	</script>
+</html>

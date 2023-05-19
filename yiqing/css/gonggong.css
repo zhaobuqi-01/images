@@ -1,0 +1,580 @@
+@font-face {
+	font-family: electronicFont;
+	src: url(../font/DS-DIGIT.TTF)
+}
+
+li {
+	list-style-type: none;
+}
+
+body {
+	line-height: 1.15;
+	font-size: 0.5rem;
+	margin: 0;
+	padding: 0;
+	background-repeat: no-repeat;
+	background-position: 0 0 / cover;
+	background-color: #101129;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+#chart-container {
+	position: relative;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.fl {
+	display: flex;
+}
+
+.fl1 {
+	display: flex;
+	justify-content: space-between;
+}
+
+.fl1_align {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+.color1 {
+	color: #ffffff;
+}
+
+.jz_align {
+	text-align: center;
+}
+
+.padd {
+	padding: 0px 20px;
+}
+
+.main {
+	width: 100vw;
+	height: 100vh;
+	background-color: #093263;
+	padding: 5px;
+
+	box-sizing: border-box;
+
+}
+
+.header-img {
+	background: url(../images/sac.gif) no-repeat center center;
+	background-size: 100%;
+	height: 10vw;
+	top: -2vw;
+	position: absolute;
+	width: 100%;
+
+}
+
+
+/* 头部 */
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 4vw;
+}
+
+.header_left,
+.header_cont,
+.header_right {
+	width: 33%;
+	text-align: center;
+	position: relative;
+}
+
+.header_title {
+	color: #fff;
+	font-size: 1.6vw;
+	text-shadow: 0 0 1vw #00d8ff;
+}
+
+/* 时间 */
+#time {
+	text-align: center;
+	color: #fff;
+	font-size: 1.2vw;
+}
+
+/* 横线 */
+.henxian {
+	width: 100%;
+	height: 0.5vw;
+}
+
+.henxian img {
+	width: 100%;
+	height: 100%;
+}
+
+/* 内容 */
+.neirong {
+	height: 85vh;
+	margin-top: 30px;
+}
+
+.cont_left {
+	width: 24%;
+	display: flex;
+	flex-wrap: wrap;
+
+
+}
+
+.cont_left_1 {
+	width: 100%;
+	height: 40vh;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #2C58A6;
+	box-shadow: 0 0 10px #2C58A6;
+}
+
+
+
+.cont_left_3 {
+	width: 100%;
+	height: 40vh;
+	box-sizing: border-box;
+	position: relative;
+	border: 1px solid #2C58A6;
+	box-shadow: 0 0 10px #2C58A6;
+}
+
+
+.t_line_box i {
+	background-color: #4788fb;
+	box-shadow: 0px 0px 10px #4788fb;
+	position: absolute;
+}
+
+.t_l_line {
+	height: 5px;
+	width: 26px;
+	left: -3px;
+	top: -3px;
+}
+
+.t_line_box i {
+	background-color: #4788fb;
+	box-shadow: 0px 0px 10px #4788fb;
+	position: absolute;
+}
+
+.r_t_line {
+	width: 5px;
+	height: 24px;
+	right: -3px;
+	top: -3px;
+}
+
+.t_line_box i {
+	background-color: #4788fb;
+	box-shadow: 0px 0px 10px #4788fb;
+	position: absolute;
+}
+
+.l_b_line {
+	width: 5px;
+	height: 24px;
+	left: -3px;
+	bottom: -3px;
+}
+
+.t_line_box i {
+	background-color: #4788fb;
+	box-shadow: 0px 0px 10px #4788fb;
+	position: absolute;
+}
+
+.r_b_line {
+	width: 5px;
+	height: 24px;
+	right: -3px;
+	bottom: -3px;
+}
+
+.b_l_line {
+	height: 5px;
+	width: 26px;
+	left: -3px;
+	bottom: -3px;
+}
+
+.b_r_line {
+	height: 5px;
+	width: 26px;
+	right: -3px;
+	bottom: -3px;
+}
+
+.cont_cont {
+	width: 49%;
+}
+
+.cont_right {
+	width: 24%;
+}
+
+/* 中 */
+.cont_cont {
+	width: 49%;
+	height: 82vh;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #2C58A6;
+	box-shadow: 0 0 10px #2C58A6;
+}
+
+.center1 {
+	width: 96%;
+	height: 20vh;
+	margin: 10px auto;
+	background-color: #0e417e;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.center1>.item {
+	width: 30%;
+	height: 8vh;
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.center1>.item>.number {
+	font-size: 30px;
+	color: #ffeb7b;
+	font-weight: bold;
+	font-family: electronicFont;
+}
+
+.center1>.item>.text {
+
+	font-size: 16px;
+	color: #ffffff;
+}
+
+.center_2 {
+	width: 96%;
+	height: 60vh;
+	margin: auto;
+	position: relative;
+}
+
+.center_2conts {
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+
+}
+
+/* 右 */
+.cont_right {
+	width: 24%;
+	display: flex;
+	flex-wrap: wrap;
+
+
+}
+
+.cont_right_1 {
+	width: 100%;
+	height: 40vh;
+	position: relative;
+	box-sizing: border-box;
+	border: 1px solid #2C58A6;
+	box-shadow: 0 0 10px #2C58A6;
+}
+
+.cont_right_2 {
+	width: 100%;
+	height: 40vh;
+	box-sizing: border-box;
+	position: relative;
+	border: 1px solid #2C58A6;
+	box-shadow: 0 0 10px #2C58A6;
+}
+
+/* .cont_right_3 {
+	width: 100%;
+	height: 25vh;
+	box-sizing: border-box;
+	position: relative;
+	border: 1px solid #2C58A6;
+	box-shadow: 0 0 10px #2C58A6;
+} */
+
+/* 旋转 */
+.center_2_map1 {
+	position: absolute;
+	z-index: 2;
+	width: 30vw;
+	top: -3vw;
+	left: 9vw;
+	animation: myfirst2 15s infinite linear;
+}
+
+.center_2_map2 {
+	position: absolute;
+	width: 25vw;
+	top: 1vw;
+	left: 12vw;
+	z-index: 3;
+	opacity: 0.2;
+	animation: myfirst 10s infinite linear;
+}
+
+.center_2_map3 {
+	position: absolute;
+	top: 1vw;
+	left: 12vw;
+	width: 25vw;
+	z-index: 1;
+	transform: scale(.8);
+	opacity: .6;
+}
+
+.center_2_map1>img,
+.center_2_map2>img,
+.center_2_map3>img {
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes myfirst2 {
+	from {
+		transform: rotate(0deg) scale(.8);
+	}
+
+	to {
+		transform: rotate(359deg) scale(.8);
+	}
+}
+
+@keyframes myfirst {
+	from {
+		transform: rotate(0deg) scale(.8);
+	}
+
+	to {
+		transform: rotate(-359deg) scale(.8);
+	}
+}
+
+/* 监控 */
+.monitor {
+	height: 20rem;
+}
+
+.monitor .inner {
+	padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.monitor .tabs {
+	padding: 0 1.5rem;
+	margin-bottom: 0.75rem;
+}
+
+.monitor .tabs a {
+	color: #1950c4;
+	font-size: 0.75rem;
+	padding: 0 1.125rem;
+}
+
+.monitor .tabs a:first-child {
+	border-right: 0.083rem solid #00f2f1;
+	padding-left: 0;
+}
+
+.monitor .tabs a.active {
+	color: #fff;
+}
+
+.monitor .content {
+	flex: 1;
+	display: none;
+	position: relative;
+}
+
+.monitor .head {
+	background: rgba(255, 255, 255, 0.1);
+	font-size: 0.583rem;
+	padding: 0.5rem 1.5rem;
+	color: #68d8fe;
+	display: flex;
+	justify-content: space-between;
+	line-height: 1.05;
+}
+
+.monitor .col:nth-child(1) {
+	width: 3.2rem;
+	text-align: center;
+}
+
+.monitor .col:nth-child(2) {
+	width: 10.4rem;
+	/* 不换行  一行省略*/
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.monitor .col:nth-child(3) {
+	width: 3.2rem;
+}
+
+.monitor .marquee-view {
+	position: absolute;
+	top: 1.6rem;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+	height: 30vh;
+}
+
+.monitor .row {
+	line-height: 1.05;
+	padding: 0.5rem 1.5rem;
+	color: #61a8ff;
+	font-size: 0.5rem;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.monitor .row:hover {
+	color: #68d8ff;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.monitor .row:hover .icon-dot {
+	opacity: 1;
+}
+
+.monitor .icon-dot {
+	position: absolute;
+	left: 0.64rem;
+	opacity: 0;
+}
+
+.monitor .marquee-view {
+	position: absolute;
+	top: 1.6rem;
+	bottom: 0;
+	width: 100%;
+	overflow: hidden;
+	height: 30vh;
+}
+
+.monitor .row {
+	line-height: 1.05;
+	padding: 0.5rem 1.5rem;
+	color: #61a8ff;
+	font-size: 0.5rem;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+}
+
+.monitor .row:hover {
+	color: #68d8ff;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.monitor .row:hover .icon-dot {
+	opacity: 1;
+}
+
+.monitor .icon-dot {
+	position: absolute;
+	left: 0.64rem;
+	opacity: 0;
+}
+
+/* ------------------------------------------------------------动画 */
+@keyframes row {
+	0% {}
+
+	100% {
+		transform: translateY(-50%);
+	}
+}
+
+/* 调用动画 */
+.monitor .marquee {
+	/* //infinite永久调用动画 */
+	animation: row 10s linear infinite;
+}
+
+/*鼠标划入 停止动画  */
+.monitor .marquee:hover {
+	animation-play-state: paused;
+}
+
+/* 点位 */
+.point {
+	height: 14.167rem;
+}
+
+.point .chart {
+	display: flex;
+	margin-top: 1rem;
+	justify-content: space-between;
+}
+
+.point .pie {
+	width: 13rem;
+	height: 10rem;
+	margin-left: -0.4rem;
+}
+
+.point .data {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 7rem;
+	padding: 1.5rem 1.25rem;
+	box-sizing: border-box;
+	background-image: url(../images/rect.png);
+	background-size: cover;
+}
+
+.point h4 {
+	margin-bottom: 0.5rem;
+	font-size: 1.167rem;
+	color: #fff;
+}
+
+.point span {
+	display: block;
+	color: #4c9bfd;
+	font-size: 0.667rem;
+}

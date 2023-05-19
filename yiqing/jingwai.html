@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="./css/haiwai.css">
+		<script src="js/js/vue.js"></script>
+		<script src="js/js/vue-resource.min.js"></script>
+	</head>
+	<body>
+		<div class="main">
+			<!-- 顶部 -->
+			<div class="header">
+				<div class="header_left">
+					<a class="header_title" href="./index.html">返回疫情大数据主页</a>
+				</div>
+				<div class="header_cont">
+					<div class="header_title">
+						疫情大数国内外对比
+					</div>
+					<div class="header-img">
+
+					</div>
+				</div>
+				<div class="header_right">
+					<div class="header_title" id="time1s">
+
+					</div>
+				</div>
+			</div>
+
+			<!-- 横线 -->
+			<div class="henxian"><img src="./images/header.png" alt=""></div>
+
+
+
+			<div class="neirong fl1">
+				<!-- 左 -->
+				<div class="cont_left">
+					<div class="cont_right_1" style="padding: 20px;">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<div class="" style="color: red;font-size: 25px;font-weight: bold;">
+							全国疫情实时动态
+
+						</div>
+
+						<div class=""
+							style="border-radius: 10px;background-color: #dcdfe3;padding: 10px;margin-top: 10px;">
+							<div class="duibi_tile">
+								全球疫情（海外）
+							</div>
+							<div class="duibi_qz" id="haiwais">
+								<div class="duibi_qz_1">
+									<div class="duibi_qz_1_1">{{haiwai[0].description}}</div>
+									<div class="duibi_qz_1_2">{{haiwai[0].title}}</div>
+								</div>
+								<div class="duibi_qz_2">
+									<div class="duibi_qz_3_1">{{haiwai[1].description}}</div>
+									<div class="duibi_qz_3_2">{{haiwai[1].title}}</div>
+								</div>
+								<div class="duibi_qz_2">
+									<div class="duibi_qz_2_1">{{haiwai[2].description}}</div>
+									<div class="duibi_qz_2_2">{{haiwai[2].title}}</div>
+								</div>
+							</div>
+							<div class="index_time">
+								<span><span>“较昨日新增”数据依据从北京时间当日0点起相关权威机构新公布确诊数据，因各国公布次数、时间不一，数据会即时变化调整，以当日最终数据为准。</span><span>|</span><span>数据说明
+									</span><span></span></span>
+							</div>
+						</div>
+					</div>
+
+					<div class="cont_left_1">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<div class="" style="text-align: center;font-size: 16px;color: #000000;margin-top: 10px;">
+							海外重点疫情国家累计确诊趋势
+						</div>
+						<div id="haiwai" style="width: 100%;height:90%;"></div>
+					</div>
+				</div>
+
+				<!-- 右 -->
+				<div class="cont_right">
+
+					<div class="cont_right_2" style="padding: 20px;">
+						<!--左上边框-->
+						<div class="t_line_box">
+							<i class="t_l_line"></i>
+							<i class="l_t_line"></i>
+						</div>
+						<!--右上边框-->
+						<div class="t_line_box">
+							<i class="t_r_line"></i>
+							<i class="r_t_line"></i>
+						</div>
+						<!--左下边框-->
+						<div class="t_line_box">
+							<i class="l_b_line"></i>
+							<i class="b_l_line"></i>
+						</div>
+						<!--右下边框-->
+						<div class="t_line_box">
+							<i class="r_b_line"></i>
+							<i class="b_r_line"></i>
+						</div>
+						<!-- 选项卡 -->
+						<div class="marg" id="leijis">
+							<div id="tab">
+								<div class="tab-tit">
+									<a @click="curId=0" :class="{'cur':curId===0}">境外病例累计最多前十</a>
+									<a @click="curId=1" :class="{'cur':curId===1}">境外病例累计最少前十</a>
+									<a @click="curId=2" :class="{'cur':curId===2}">境外病例死亡最多前十</a>
+									<a @click="curId=3" :class="{'cur':curId===3}">境外病例死亡最少前十</a>
+									<a @click="curId=4" :class="{'cur':curId===4}">境外病例治愈最多前十</a>
+									<a @click="curId=5" :class="{'cur':curId===5}">境外病例治愈最少前十</a>
+								</div>
+								<div class="tab-con mt35">
+									<div v-show="curId===0">
+
+										<div
+											style="display: flex;justify-content: space-between;border:1px solid ;line-height: 30px;">
+											<div style="width: 30%;text-align: center;font-size: 20px; font-weight: bold;">
+												国家
+											</div>
+											<div style="width: 30%;text-align: center;font-size: 20px; font-weight: bold;">
+												境外病例累计最多前十
+											</div>
+										</div>
+										<div>
+											<div style="display: flex;justify-content: space-between;border: 1px solid;"
+												v-for="(item, index) in leiji" :key="index">
+
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.title}}
+												</div>
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.description}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div v-show="curId===1">
+										<div
+											style="display: flex;justify-content: space-between;border:1px solid #dcdfe3;line-height: 30px;">
+											<div style="width: 30%;text-align: center;">
+												国家
+											</div>
+											<div style="width: 30%;text-align: center;">
+												境外病例累计最少前十
+											</div>
+										</div>
+										<div>
+											<div style="display: flex;justify-content: space-between;border: 1px solid;"
+												v-for="(item, index) in leiji1" :key="index">
+
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.title}}
+												</div>
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.description}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div v-show="curId===2">
+										<div
+											style="display: flex;justify-content: space-between;border:1px solid #dcdfe3;line-height: 30px;">
+											<div style="width: 30%;text-align: center;">
+												国家
+											</div>
+											<div style="width: 30%;text-align: center;">
+												境外病例死亡最多前十
+											</div>
+										</div>
+										<div>
+											<div style="display: flex;justify-content: space-between;border: 1px solid;"
+												v-for="(item, index) in siwang" :key="index">
+
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.title}}
+												</div>
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.description}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div v-show="curId===3">
+										<div
+											style="display: flex;justify-content: space-between;border:1px solid #dcdfe3;line-height: 30px;">
+											<div style="width: 30%;text-align: center;">
+												国家
+											</div>
+											<div style="width: 30%;text-align: center;">
+												境外病例死亡最少前十
+											</div>
+										</div>
+										<div>
+											<div style="display: flex;justify-content: space-between;border: 1px solid;"
+												v-for="(item, index) in siwang1" :key="index">
+
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.title}}
+												</div>
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.description}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div v-show="curId===4">
+										<div
+											style="display: flex;justify-content: space-between;border:1px solid #dcdfe3;line-height: 30px;">
+											<div style="width: 30%;text-align: center;">
+												国家
+											</div>
+											<div style="width: 30%;text-align: center;">
+												境外病例治愈最多前十
+											</div>
+										</div>
+										<div>
+											<div style="display: flex;justify-content: space-between;border: 1px solid;"
+												v-for="(item, index) in zhiyu" :key="index">
+										
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.title}}
+												</div>
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.description}}
+												</div>
+											</div>
+										</div>
+									</div>
+									<div v-show="curId===5">
+										<div
+											style="display: flex;justify-content: space-between;border:1px solid #dcdfe3;line-height: 30px;">
+											<div style="width: 30%;text-align: center;">
+												国家
+											</div>
+											<div style="width: 30%;text-align: center;">
+												境外病例治愈最少前十
+											</div>
+										</div>
+										<div>
+											<div style="display: flex;justify-content: space-between;border: 1px solid;"
+												v-for="(item, index) in zhiyu1" :key="index">
+										
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.title}}
+												</div>
+												<div style="width: 30%;text-align: center;line-height: 40px;">
+													{{item.description}}
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+		</div>
+
+
+	</body>
+	<script src="js/time.js"></script><!-- 时间js -->
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/js/echarts.min.js"></script>
+	<script src="js/js/haiwai1.js"></script><!-- 恢复产业企业 -->
+	<script type="text/javascript">
+		// 海外疫情数据总合
+		new Vue({
+			el: "#haiwais",
+			data: {
+				curId: 0,
+				haiwai: ''
+			},
+			mounted() {
+				this.datahaiwai()
+			},
+			methods: {
+				datahaiwai() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=30&model=-1', {})
+						.then(res => {
+							this.haiwai = res.data.data.pageList.data
+							console.log(this.haiwai)
+						})
+				}
+			}
+		})
+	</script>
+	<script type="text/javascript">
+		new Vue({
+			el: "#leijis",
+			data: {
+				curId: 0,
+				leiji: '', // 境外病例累计最多前十
+				leiji1: '', // 境外病例累计最少前十
+				siwang: '', // 境外病例死亡最多前十
+				siwang1: '', // 境外病例死亡最少前十
+				zhiyu:'', //境外病例治愈最多前十
+				zhiyu1:'' //境外病例治愈最少前十
+			},
+			mounted() {
+				this.dataleiji() // 境外病例累计最多前十
+				this.dataleiji1() // 境外病例累计最少前十
+				this.datasiwang() //境外病例死亡最多前十
+				this.datasiwang1() //境外病例死亡最少前十
+				this.datazhiyu() //境外病例治愈最多前十
+				this.datazhiyu1() //境外病例治愈最少前十
+			},
+			methods: {
+				// 境外病例累计最多前十
+				dataleiji() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=31&model=-1', {})
+						.then(res => {
+							this.leiji = res.data.data.pageList.data
+						})
+				},
+				// 境外病例累计最少前十
+				dataleiji1() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=32&model=-1', {})
+						.then(res => {
+							this.leiji1 = res.data.data.pageList.data
+						})
+				},
+				//境外病例死亡最多前十
+				datasiwang() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=33&model=-1', {})
+						.then(res => {
+							this.siwang = res.data.data.pageList.data
+						})
+				},
+				//境外病例死亡最少前十
+				datasiwang1() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=34&model=-1', {})
+						.then(res => {
+							this.siwang1 = res.data.data.pageList.data
+						})
+				},
+				//境外病例治愈最多前十
+				datazhiyu() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=35&model=-1', {})
+						.then(res => {
+							this.zhiyu = res.data.data.pageList.data
+						})
+				},
+				//境外病例治愈最少前十
+				datazhiyu1() {
+					this.$http.get(
+							'https://newyq.ycome.top//addons/cms/api.archives/index?page=1&channel=36&model=-1', {})
+						.then(res => {
+							this.zhiyu1 = res.data.data.pageList.data
+						})
+				}
+			}
+		})
+	</script>
+
+</html>
